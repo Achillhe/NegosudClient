@@ -16,7 +16,7 @@ header{
 
 .navbar a{
     color: white;
-    font-family: "Butler";
+    font-family: 'Lato', sans-serif;
     text-decoration: none;
     font-size: 19px;
 }
@@ -69,8 +69,8 @@ header{
 .btn {
     text-transform: uppercase;
     border: 0;
-    background:white;
-    font-family: "Butler";
+    background:rgb(255, 255, 255);
+    font-family: 'Lato', sans-serif;
     color: #a42424;
     font-size: 14px;
     border: 1px solid #a42424;
@@ -81,11 +81,18 @@ header{
 .btn.btn-secondary {
     text-transform: uppercase;
     background-color: #a42424;
-    font-family: "Butler";
+    font-family: 'Lato', sans-serif;
     color: #fff;
     cursor: pointer;
 }
 
+.btn:hover{
+    background-color: rgb(226, 227, 227);
+}
+
+.btn.btn-secondary:hover {
+    background-color: #721818;
+}
 @media screen and (max-width: 920px){
 
     .navbar{
@@ -144,5 +151,4 @@ header{
         margin: 25px 0;
         font-size: 1.2em;
     }
-
 }

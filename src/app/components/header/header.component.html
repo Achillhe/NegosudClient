@@ -6,14 +6,19 @@
                 <div class="liste">
                     <li><a [routerLink]="''">Accueil</a></li>
                     <li><a [routerLink]="'/product'">Nos produits</a></li>
-                    <li><a href="#">À propos</a></li>
                 </div>
-                <a [routerLink]="'/inscription'" class="btn1">
-                    <li><button class="btn">Inscription</button></li>
-                </a>
-                <a href="#" class="btn2">
-                    <li><button class="btn btn-secondary">Connexion</button></li>
-                </a>
+                <ng-container *ngIf="!estConnecte">
+                    <a [routerLink]="'/inscription'" class="btn1">
+                        <li><button class="btn">Inscription</button></li>
+                    </a>
+                    <a [routerLink]="'/connexion'" class="btn2">
+                        <li><button class="btn btn-secondary">Connexion</button></li>
+                    </a>
+                </ng-container>
+                <ng-container *ngIf="estConnecte">
+                    <button class="btn "style="margin-right: 8px;" >Profil</button>
+                    <button class="btn btn-secondary" (click)="deconnecter()">Déconnexion</button>
+                </ng-container>
             </ul>
         </div>
         <img src="../../../assets/img/menu-btn.png" alt="" class="menuburger">

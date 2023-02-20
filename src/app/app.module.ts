@@ -8,6 +8,10 @@ import { ProductComponent } from './components/product/product.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { DxButtonModule, DxDataGridModule } from 'devextreme-angular';
 
 @NgModule({
   declarations: [
@@ -17,12 +21,22 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     HeaderComponent,
     FooterComponent,
     SignUpComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    DxButtonModule,
+    DxDataGridModule
   ],
+  
   providers: [],
+  exports: [
+    SignUpComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class SignUpModule { }
