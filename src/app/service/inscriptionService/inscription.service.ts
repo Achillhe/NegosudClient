@@ -12,10 +12,11 @@ export class InscriptionService {
   constructor(private http: HttpClient) { }
 
 
-  addClient(nom: string, prenom: string, email: string, motDePasse: string, confirmationMotDePasse: string) {
+  addClient(nom: string, prenom: string, tel: string, email: string, motDePasse: string, confirmationMotDePasse: string) {
     const body = {
       nom: nom,
       prenom: prenom,
+      tel: tel,
       email: email,
       motDePasse: motDePasse,
       confirmationMotDePasse: confirmationMotDePasse

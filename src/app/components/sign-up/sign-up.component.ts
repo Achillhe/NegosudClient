@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { InscriptionService } from 'src/app/service/inscriptionService/inscription.service';
 
 @Component({
@@ -12,6 +11,7 @@ import { InscriptionService } from 'src/app/service/inscriptionService/inscripti
 export class SignUpComponent {
   nom: string;
   prenom: string;
+  tel: string;
   email: string;
   motDePasse: string;
   confirmationMotDePasse: string;
@@ -28,17 +28,18 @@ export class SignUpComponent {
   onSubmit() {
     const nom = this.nom;
     const prenom = this.prenom;
+    const tel = this.tel;
     const email = this.email;
     const motDePasse = this.motDePasse;
     const confirmationMotDePasse = this.confirmationMotDePasse;
   
     // Vérification de l'e-mail existant seulement lorsque le formulaire est rempli
-    if (nom && prenom && email && motDePasse && confirmationMotDePasse) {
+    if (nom && prenom && tel && email && motDePasse && confirmationMotDePasse) {
       if (motDePasse !== confirmationMotDePasse) {
         this.errorMessageMotDePasse = 'Les mots de passe ne correspondent pas';
         return;
       }
-      this.inscriptionService.addClient(nom, prenom, email, motDePasse, confirmationMotDePasse).subscribe(
+      this.inscriptionService.addClient(nom, prenom, tel, email, motDePasse, confirmationMotDePasse).subscribe(
         response => {
           console.log(response);
           this.router.navigate(['/accueil']);
