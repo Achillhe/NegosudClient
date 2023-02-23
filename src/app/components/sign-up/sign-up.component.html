@@ -19,7 +19,7 @@
     <div class="form-group">
       <label for="email">Adresse email :</label>
       <input type="email" id="email" name="email" [(ngModel)]="email" required>
-      <p *ngIf="errorMessageEmail" class="error-message">{{ errorMessageEmail }}</p>
+      
     </div>
     <div class="form-group">
       <label for="password">Mot de passe :</label>
@@ -30,6 +30,7 @@
       <label for="password-confirm">Confirmer le mot de passe :</label>
       <input type="password" id="password-confirm" name="confirmationMotDePasse" [(ngModel)]="confirmationMotDePasse" required>
       <p *ngIf="errorMessageMotDePasse" class="error-message">{{ errorMessageMotDePasse }}</p>
+      <p *ngIf="errorMessageEmail" class="error-message">{{ errorMessageEmail }}</p>
     </div>
     <button type="submit">Inscription</button>
     <p class="login-link">Déjà inscrit ? <a [routerLink]="'/connexion'">Connectez-vous ici</a></p>

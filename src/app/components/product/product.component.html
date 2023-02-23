@@ -1,31 +1,16 @@
-<!-- <div class="catalogue">
-<div class="row">
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let produit of produits">
-      <div class="card h-100">
-        <img class="card-img-top" [src]="'assets/img/vins/' + produit.image" alt="{{ produit.nomDomaine }}">
-        <div class="card-body">
-          <h4 class="card-title">{{ produit.nomDomaine }}</h4>
-          <p class="card-text">{{ produit.millesime }}</p>
-          <p class="card-text">Volume: {{ produit.volume }} L</p>
-          <h5 class="card-text text-danger">{{ produit.prix }} €</h5>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-success">Ajouter au panier</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
 <app-header></app-header>
 
 <div class="catalogue">
   <div class="card" *ngFor="let produit of produits">
     <img [src]="'assets/img/vins/' + produit.image" alt="{{ produit.nomDomaine }}">
     <h1>{{ produit.nomDomaine }}</h1>
-    <p class="price">Prix à la bouteille : {{ produit.prix }}€</p>
+    <p class="prix">Prix à la bouteille : {{ produit.prix }}€/HT</p>
     <p>Millésime : {{ produit.millesime }}</p>
     <p>Volume: 0.{{ produit.volume }}cl</p>
-    <p><button>Ajouter au panier</button></p>
+    <p>
+      <button (click)="ajouterAuPanier(produit)">Ajouter au panier</button>
+      <button>Détail</button>
+    </p>
   </div>
 </div>
 

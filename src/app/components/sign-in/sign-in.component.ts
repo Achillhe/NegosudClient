@@ -29,6 +29,7 @@ export class SignInComponent {
   constructor(private connexionService: ConnexionService, private router: Router) { }
 
   soumettreFormulaire() {
+    this.errorMessage = '';
     this.connexionService.connecter(this.email, this.motDePasse)
       .subscribe(
         response => {
@@ -38,6 +39,7 @@ export class SignInComponent {
             this.router.navigate(['/accueil']);
           } else if(response.status === 400) {
             this.errorMessage = 'Email ou mot de passe invalide';
+            console.log('Error 400:', this.errorMessage); // Vérifier que la variable errorMessage a été affectée
           }
         },
         error => {

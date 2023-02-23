@@ -12,6 +12,9 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DxButtonModule, DxDataGridModule } from 'devextreme-angular';
+import { ProfilComponent } from './components/profil/profil.component';
+import { PanierComponent } from './components/panier/panier.component';
+import { ConditionsComponent } from './components/conditions/conditions.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { DxButtonModule, DxDataGridModule } from 'devextreme-angular';
     FooterComponent,
     SignUpComponent,
     SignInComponent,
+    ProfilComponent,
+    PanierComponent,
+    ConditionsComponent,
   ],
   imports: [
     BrowserModule,

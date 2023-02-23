@@ -29,13 +29,15 @@ export class InscriptionService {
   }
 
   private handleError(error: any): Observable<any> {
+    let errorMessageMotDePasse = '';
+    let errorMessageEmail = '';
     let errorMessage = '';
 
     if (error.status === 500) {
       if (error.error === 'Cet e-mail est déjà enregistré.') {
-        errorMessage = 'Cet e-mail est déjà enregistré.';
+        errorMessageEmail = 'Cet e-mail est déjà enregistré.';
       } else if (error.error === 'Les mots de passe ne correspondent pas.') {
-        errorMessage = 'Les mots de passe ne correspondent pas.';
+        errorMessageMotDePasse = 'Les mots de passe ne correspondent pas.';
       } else {
         errorMessage = 'Une erreur est survenue.';
       }

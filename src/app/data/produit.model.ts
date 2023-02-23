@@ -7,10 +7,10 @@ export class Produit{
     public volume:number;
     public millesime:number;
     public image:string;
-    public type:Type;
+    public sortid:number;
 } 
 
-export class Type{
+export class Sort{
     public id:number;
     public name:string;
 }

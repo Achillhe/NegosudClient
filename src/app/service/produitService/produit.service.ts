@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Produit, Sort } from 'src/app/data/produit.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,19 @@ export class ProduitService {
 
   constructor(private http: HttpClient) { }
 
-  getProduits(): Observable<any> {
-    return this.http.get(this.produitGetAll);
+  getProduits(sortid?: number): Observable<any> {
+    let url = this.produitGetAll;
+    if (sortid) {
+        url += '?sortid=' + sortid;
+    }
+    return this.http.get(url);
+}
+
+  getTypes(): Observable<Sort[]> {
+    return this.http.get<Sort[]>('https://localhost:7141/api/Sort');
+  }
+  
+  getProduitsParType(sortId: number): Observable<Produit[]> {
+    return this.http.get<Produit[]>(`${this.produitGetAll}?sortId=${sortId}`);
   }
 }

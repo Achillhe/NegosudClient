@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Produit } from 'src/app/data/produit.model';
+import { Component, OnInit } from '@angular/core';
+import { Produit, Sort } from 'src/app/data/produit.model';
 import { PanierService } from 'src/app/service/panierService/panier.service';
 import { ProduitService } from 'src/app/service/produitService/produit.service';
 
@@ -8,8 +8,9 @@ import { ProduitService } from 'src/app/service/produitService/produit.service';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
   public produits: Produit[];
+  public sorts: Sort[];
 
   constructor(private produitService: ProduitService, private panierService: PanierService) { }
 
@@ -24,7 +25,8 @@ export class ProductComponent {
     );
   }
 
-  // ajouterAuPanier(produit: Produit): void {
-  //   this.panierService.ajouterProduit(produit);
-  // }
+  ajouterAuPanier(produit: Produit) {
+    this.panierService.ajouterAuPanier(produit);
+  }
+
 }

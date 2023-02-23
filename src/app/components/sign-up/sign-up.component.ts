@@ -16,7 +16,6 @@ export class SignUpComponent {
   motDePasse: string;
   confirmationMotDePasse: string;
 
-  
   errorMessageMotDePasse: string;
   errorMessageEmail: string;
 
@@ -33,7 +32,6 @@ export class SignUpComponent {
     const motDePasse = this.motDePasse;
     const confirmationMotDePasse = this.confirmationMotDePasse;
   
-    // Vérification de l'e-mail existant seulement lorsque le formulaire est rempli
     if (nom && prenom && tel && email && motDePasse && confirmationMotDePasse) {
       if (motDePasse !== confirmationMotDePasse) {
         this.errorMessageMotDePasse = 'Les mots de passe ne correspondent pas';
@@ -46,13 +44,19 @@ export class SignUpComponent {
         },
         error => {
           console.error(error);
-          if (error.error === 'Cet e-mail est déjà enregistré.') {
+          if (error.error === 'Cet e-mail est déjà enregistré.') {           
             this.errorMessageEmail = error.error;
           } else if(error.error === 'Les mots de passe ne correspondent pas.') {
             this.errorMessageMotDePasse = error.error;
           }
         }
       );
+    } else {
     }
   }
 }
+
+
+
+
+

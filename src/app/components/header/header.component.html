@@ -15,8 +15,8 @@
                         </a>
                     </ng-container>
                     <ng-container *ngIf="estConnecte">
-                        <li><a [routerLink]="''">Profil</a></li>
-                        <li><a [routerLink]="''">Panier</a></li>
+                        <li><a [routerLink]="'/profil'">Profil</a></li>
+                        <li><a [routerLink]="'/panier'">Panier</a></li>
                         <button class="btn btn-secondary" (click)="deconnecter()">Déconnexion</button>
                     </ng-container>
                 </div>

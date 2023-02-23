@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { PanierService } from 'src/app/service/panierService/panier.service';
+import { ProductComponent } from '../product/product.component';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   estConnecte = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private panierService : PanierService) {}
 
   ngOnInit() {
     const token = localStorage.getItem('token');
