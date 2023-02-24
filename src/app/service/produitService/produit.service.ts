@@ -27,4 +27,10 @@ export class ProduitService {
   getProduitsParType(sortId: number): Observable<Produit[]> {
     return this.http.get<Produit[]>(`${this.produitGetAll}?sortId=${sortId}`);
   }
+
+  getProduitsParSortid(sortId: number): Observable<any> {
+    const url = `${this.produitGetAll}?sortid=${sortId}`;
+    return this.http.get(url);
+  }
+  
 }
